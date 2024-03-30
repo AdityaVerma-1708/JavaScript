@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div class = 'parent'>
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thrusday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+        <div class="day">Sunday</div>
+    </div>
+</body>
+<script>
+    const par = document.querySelector(".parent")
+    console.log(par) //will print whole div
+    console.log(par.children);  // will give a HTML collection of child div
+    console.log(par.children[3]) //thrusday div
+    console.log(par.children[3].innerHTML) //thrusday div
+    
+    for(let i=0;i<par.children.length;i++){
+        console.log(par.children[i].innerHTML)
+    }
+
+    
+    
+    par.children[2].style.color = "orange";//here we have changed the color of particular element
+
+    //there are more different property which we can access
+
+    console.log(par.firstElementChild); //giving the first child element
+    console.log(par.lastElementChild);//giving the last child element 
+
+    //if we want to accss the parent of child
+    const child = document.querySelector('.day') //selected the first element with classs name day
+    
+    console.log(child);
+    console.log(child.parentElement);//giving the whole element of parent
+
+    //we can also access the siblings 
+    console.log(child.nextElementSibling) //next siblings
+
+    //some intrsting thing
+    console.log("nodes : ",par.childNodes);
+    //basically it will a long more than 7 nodes structure event though we have only 7 main nodes, so the thing is JS form tree structure according to every operation , so there are 7 child div and each div has a line break this line breaks also counts and some comments if its there that also counts, so it makes a structure very complex
+    
+
+
+
+</script>
+
+</html>

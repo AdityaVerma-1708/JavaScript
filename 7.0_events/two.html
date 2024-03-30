@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello world</h1>
+    <button id='stop'>stop</button>
+</body>
+<script>
+    // setTimeout(() => {   //after 2 seconds it will print the aditya in the console
+    //     console.log("aditya");
+    // }, 2000);
+
+
+    // const func1 = function(){
+    //     console.log("aditya verma");
+    // }
+    // setTimeout(func1,1000);  //->we can passs the reference of the function also
+
+    // setTimeout(() => {
+    //     document.querySelector('h1').innerHTML = "ADITYA VERMA";
+    // }, 2000);    //we can use this in different cases also 
+
+    //now if we want to apply settimeout on the event listerne
+    //lets create a button
+
+    const change = setTimeout(function(){
+        document.querySelector('h1').innerHTML = "ADITYA VERMA"
+    },3000)
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(change);
+        console.log("stopped");
+    })
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+</body>
+<script>
+    //now we will see how to make the div thorugh js
+    const h = document.createElement('h1');
+    console.log(h)
+    h.id = "name"
+    h.className = "name"
+    h.setAttribute('class','aa') //we can do both (key value)
+    h.style.backgroundColor = "blue"
+    h.style.padding = "10px"
+    
+    //there are different ways to add the text 
+    h.innerHTML = "Aditya"
+    
+    const addtext = document.createTextNode(" Verma")
+    h.appendChild(addtext) 
+
+    
+    document.body.appendChild(h) //attaching the child to the document inside the body, before this everything was in the memory
+
+
+    //so now we can wrap this up in a function and create many div or h tags by passing thew differnt arguments in the function 
+    
+
+</script>
+</html>

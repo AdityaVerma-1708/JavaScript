@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+    <h1>Hello</h1>
+    <h1 id="world">World</h1>
+
+</body>
+    <script>
+        // const change1 = "Aditya";
+        // setTimeout(() => {
+        //     document.querySelector('#world').innerHTML = change1;
+        // }, 2000);
+
+//lets do something intresting
+        // const arr = ["Aditya","Verma","Sanjhi","Dixit"];
+        // let i = -1;
+        // setInterval(function(){
+        //     document.querySelector('#world').innerHTML = arr[(i+1)%4];
+        //     i++;
+        // },1000)
+
+//lets handle the flow with the button
+        const arr = ["Aditya","Verma","Sanjhi","Dixit"];
+        let i = -1;
+
+        // const func1 = setInterval(()=>{
+        //         document.querySelector('#world').innerHTML = arr[(i+1)%4];
+        //         i++;
+        // },1000)
+        
+        let func1;   //we should declare the function outside and it should be let not const
+        document.querySelector('#start').addEventListener('click',function(){
+            func1 = setInterval(()=>{
+                document.querySelector('#world').innerHTML = arr[(i+1)%4];
+                i++;
+            },1000)
+        });
+
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearInterval(func1);
+        });
+
+    </script>
+</html>

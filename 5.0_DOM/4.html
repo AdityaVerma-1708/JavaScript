@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+    <script>
+//creating the element 
+//now we will try to insert more list element with using function
+        function addLang(lang){
+            const li = document.createElement('li');
+            li.innerHTML = `${lang}`;
+            document.querySelector('.language').appendChild(li);
+        }
+        addLang("python")
+        addLang("c++")
+        addLang("c")
+
+        //now above method is brute force but it takes too much time since they have to traverse the whole DOM tree to add the element if the elements to be added are high then it will be so time taking process
+
+        // so basically instead of using the innerHTML we can use appendchild for adding the text that would be more beneficial
+
+        function addopti(lang){
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(lang));
+            document.querySelector('.language').appendChild(li);
+        }
+        addopti("java")
+        addopti("golang")
+
+
+
+//editing the text
+        const secondlang = document.querySelector("li:nth-child(2)")
+        // secondlang.innerHTML = "rust";  //less optimized 
+        
+        const newli = document.createElement('li');
+        newli.textContent = "rust";  
+        secondlang.replaceWith(newli);
+        //in first approach we just replaced the innerHTML of the same li element but in second approach we created the new node or element and replaced it with old, by using the replaceWith(reference)
+
+        //editing first lang
+        const first = document.querySelector("li:first-child");
+        const newfirst = document.createElement('li');
+        newfirst.textContent = "TypeScript";
+        first.replaceWith(newfirst);
+
+        //we can use then outerHTMl also to change
+        const forth = document.querySelector("li:nth-child(4)");
+        forth.outerHTML = '<li>sql</li>';
+
+//removing the node
+        const last = document.querySelector("li:nth-child(6)");
+        last.remove();
+
+        
+    </script>
+</html>

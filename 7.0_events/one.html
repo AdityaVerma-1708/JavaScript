@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Verma</title>
+</head>
+
+<body>
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="one" src="one.jpg" alt=""></li>
+            <li><img width="200px" id="two" src="two.jpg" alt=""></li>
+            <li><img width="200px" id="three" src="three.jpg" alt=""></li>
+            <li><img width="200px" id="four" src="four.jpg" alt=""></li>
+            <li><img width="200px" id="five" src="five.jpg" alt=""></li>
+            <li><a href="https://google.com" id="google"> google</a></li>
+
+        </ul>
+    </div>
+</body>
+<script>
+
+    // document.getElementById('one').onclick = function () {
+    //     alert("one clicked");
+    // }
+
+    //we can also use eventlistner which gives more functionality
+
+    // document.getElementById('iamges').addEventListener('click',function(){
+    //     alert("some image got clicked");
+    // },false)
+
+//now the here in adddeventli 'false' --> event bubbling and 'true' --> event capturing
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('images clicked');
+    // },false);
+
+    // document.getElementById('one').addEventListener('click',function(e){
+    //     console.log("one clicked");
+    // },false);
+    // //event bubbing
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('images clicked');
+    // },true);
+
+    // document.getElementById('one').addEventListener('click',function(e){
+    //     console.log("one clicked");
+    // },true);
+    // //event capturing 
+
+//and if we want to stop the bubbling of the events
+
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log("images clicked");
+    },false)
+    document.getElementById('one').addEventListener('click',function(e){
+        console.log("one clicked");
+        e.stopPropagation();   //will stop bubbling to upper events
+    },false)
+
+//simiilar to stoppropagagtion we can also prevent default functionality    
+
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault();    //now link will not direct
+    },false);
+
+</script>
+
+</html>
