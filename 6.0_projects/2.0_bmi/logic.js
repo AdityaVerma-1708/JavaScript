@@ -16,5 +16,4 @@ form.addEventListener('submit',function(event){
     else{
         result.innerHTML = `<span>${bmi}</span><br><span>OVER WEIGHT</span>`;
     }
-
 })
